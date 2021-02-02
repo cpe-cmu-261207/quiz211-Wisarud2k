@@ -1,3 +1,5 @@
+import { table } from "../src/App";
+
 function App() {
   const persons = [
     {
@@ -11,12 +13,20 @@ function App() {
       age: "20"
     }
   ];
+
   return (
     <div class="ml-2">
       <h3 class="title is-3">Person List</h3>
 
+      {persons.map((item) => (
+        <table name={item.name} gender={item.gender} age={item.age}></table>
+      ))}
+
+      {/* {persons.map((item) => (
+        <p>{item.name}</p>
+      ))} */}
       {/* Convert me to a component! */}
-      <table class="table is-bordered mb-3">
+      {/* <table class="table is-bordered mb-3">
         <tbody>
           <tr>
             <th>Name</th>
@@ -29,7 +39,7 @@ function App() {
             <td>50</td>
           </tr>
         </tbody>
-      </table>
+      </table> */}
 
       {/* Code me please! */}
       <h3 class="title is-3">ID Counter</h3>
